@@ -5,8 +5,13 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       local lint = require 'lint'
+      local markdown = require('lint').linters.markdownlint
+      markdown.args = {
+        '--config',
+        '$HOME/management/.markdownlint.jsonc',
+      }
       lint.linters_by_ft = {
-        markdown = { 'markdownlint' },
+        markdown = { 'markdownlint', 'vale' },
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
