@@ -1,5 +1,5 @@
 -- required in which-key plugin spec in plugins/ui.lua as `require 'config.keymap'`
--- local wk = require('which-key')
+local wk = require 'which-key'
 local ms = vim.lsp.protocol.Methods
 
 P = vim.print
@@ -125,10 +125,9 @@ end
 -- needs kitty (or other terminal) config:
 -- map shift+enter send_text all \x1b[13;2u
 -- map ctrl+enter send_text all \x1b[13;5u
-nmap('<c-cr>', send_cell)
-nmap('<s-cr>', send_cell)
-imap('<c-cr>', send_cell)
-imap('<s-cr>', send_cell)
+-- nmap('<c-cr>', send_cell)
+-- nmap('<s-cr>', send_cell)
+-- imap('<c-cr>', send_cell)
 
 --- Show R dataframe in the browser
 -- might not use what you think should be your default web browser
